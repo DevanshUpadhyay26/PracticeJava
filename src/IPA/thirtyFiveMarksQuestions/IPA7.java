@@ -70,6 +70,8 @@ class Solution4{
             }
         }
 
+
+        //ASCENDING ORDER BUBBLE SORT
         for(int i = 0;i < tempH.length - 1; i++){
             for(int j=0; j < tempH.length - i - 1; j++){
                 if(tempH[j].getTotalBill() >tempH[j+1].getTotalBill())

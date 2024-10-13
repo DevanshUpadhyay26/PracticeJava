@@ -31,7 +31,7 @@ class Employee{
     //Constructors
 
 
-    Employee(int employeeId, String Name, String branch, double rating, boolean companyTransport)
+    Employee(int employeeId, String name, String branch, double rating, boolean companyTransport)
     {
         this.employeeId= employeeId;
         this.name = name;
@@ -41,7 +41,7 @@ class Employee{
     }
 }
 
-class Solution{
+class Solution6{
 
     public static int findCountOfEmployeesUsingCompTransport(Employee[] emp, String branch){
 
@@ -60,42 +60,48 @@ class Solution{
 
 
     }
-    public static Employee findEmployeeWithSecondHighestRating(Employee[] emp)
+    public static Employee[] findEmployeeWithSecondHighestRating(Employee[] emp)
     {
-        Employee[] tempEmp = new Employee[0];
-        Employee temp;
 
+        int count = 0;
 
         //companyTransport == false
         for(int i = 0; i<emp.length; i++){
             if(emp[i].getCompanyTransport() == false)
             {
-                tempEmp = Arrays.copyOf(tempEmp, tempEmp.length + 1);
-                tempEmp[tempEmp.length - 1] = emp[i];
+                count++;
+            }
+        }
+
+        // If fewer than two employees are found, return null
+        if (count < 2) {
+            return null;
+        }
+
+        Employee[] nonTransportEmp = new Employee[count];
+
+        int index = 0;
+        for(int i = 0; i <emp.length; i++){
+            if(emp[i].getCompanyTransport() == false){
+                nonTransportEmp[index] = emp[i];
+                index++;
             }
         }
 
 
-        //2nd Highest
-
-        //Bubble Sort
-
-        for(int i = 0;i<tempEmp.length -1; i++){
-            for(int j = 0; j <tempEmp.length - i - 1; j++){
-                if(tempEmp[j].getRating() > tempEmp[j+1].getRating()){
-                    temp = tempEmp[j];
-                    tempEmp[j] = tempEmp[j+1];
-                    tempEmp[j+1] = temp;
+        //Bubble Sort in descending order smaller < bigger
+        Employee temp;
+        for(int i = 0;i<nonTransportEmp.length -1; i++){
+            for(int j = 0; j <nonTransportEmp.length - i - 1; j++){
+                if(nonTransportEmp[j].getRating() < nonTransportEmp[j+1].getRating())
+                {
+                    temp = nonTransportEmp[j];
+                    nonTransportEmp[j] = nonTransportEmp[j+1];
+                    nonTransportEmp[j+1] = temp;
                 }
             }
         }
-
-
-        if(tempEmp.length > 0){
-            for(int i = 0; i<tempEmp.length-1;i++){return tempEmp[i];}}
-
-        return null;
-
+        return new Employee[]{nonTransportEmp[0],nonTransportEmp[1]};
     }
 
     public static void main (String[] args) throws java.lang.Exception
@@ -118,6 +124,14 @@ class Solution{
         }
         else{
             System.out.println("No such Employees");
+        }
+
+        Employee[] ansTwo = findEmployeeWithSecondHighestRating(emp);
+        if(ansTwo != null){
+            System.out.println(ansTwo[1].getEmpId()+ "\n" + ansTwo[1].getName());
+        }
+        else{
+            System.out.println("All Employees using company transport");
         }
 
         sc.close();
