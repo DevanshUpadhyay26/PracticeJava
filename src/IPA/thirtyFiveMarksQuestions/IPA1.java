@@ -116,6 +116,4 @@ class courseProgram{
 
 
 
-public class ipaOne {
 
-}
