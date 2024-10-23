@@ -1,4 +1,4 @@
-package IPA.stringsAndArrays;
+package IPA.fifteenMarksQuestions;
 
 import java.util.Scanner;
 

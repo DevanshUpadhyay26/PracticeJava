@@ -7,14 +7,6 @@ public class basicQuestions {
     static Scanner sc = new Scanner(System.in);
 
 
-
-
-
-
-
-
-
-
     //Get Array
     static void getArrays(int [] inputArray) {
         //For Loop Iteration
