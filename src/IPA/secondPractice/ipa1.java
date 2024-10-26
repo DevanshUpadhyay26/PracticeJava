@@ -1,7 +1,6 @@
-package IPA.thirtyFiveMarksQuestions;
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package IPA.secondPractice;
+
+import java.util.Scanner;
 
 class Codechef1
 {
