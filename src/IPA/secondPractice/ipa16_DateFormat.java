@@ -61,18 +61,18 @@ class Codechef16
                 index++;
             }
         }
-        for(int i= 0; i<studS.length - 1; i++)
-        {
-            for(int j = 0; j<studS.length - i -1; j++)
-            {
-                if(studS[j].getRollNo() > studS[j+1].getRollNo())
-                {
-                    Student2 temp = studS[j];
-                    studS[j] = studS[j+1];
-                    studS[j+1] = temp;
-                }
-            }
-        }
+//        for(int i= 0; i<studS.length - 1; i++)
+//        {
+//            for(int j = 0; j<studS.length - i -1; j++)
+//            {
+//                if(studS[j].getRollNo() > studS[j+1].getRollNo())
+//                {
+//                    Student2 temp = studS[j];
+//                    studS[j] = studS[j+1];
+//                    studS[j+1] = temp;
+//                }
+//            }
+//        }
         return studS;
     }
 

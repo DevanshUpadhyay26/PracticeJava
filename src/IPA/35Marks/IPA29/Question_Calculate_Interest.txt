@@ -1,0 +1,29 @@
+Find total interest of an amount.
+
+Create a class Account with following attributes :
+id - int
+balance - double
+interestRate - double
+
+Take another integer as number of year. 
+After that calculate total interest using formula:
+
+Percentage = interestRate * 100 / time
+Total Interest = Percentage + interestRate
+
+
+
+
+101
+5000.00
+0.05
+102
+10000.00
+0.03
+103
+25000.00
+0.07
+104
+15000.00
+0.045
+4
